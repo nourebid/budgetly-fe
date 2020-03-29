@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Navbar extends Component {
+class SignOut extends Component {
     render () {
         return(
             <div style={{display: "flex", justifyContent: "flex-end"}}>
@@ -10,4 +10,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default SignOut
