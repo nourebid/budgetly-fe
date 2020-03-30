@@ -7,13 +7,21 @@ import Login from './components/login';
 
 
 class App extends Component {
+  state = {
+    route: 'login'
+  }
   render () {
     return (
       <div className="App">
         <Landing />
-        <SignOut />
-        <Register />
-        <Login />
+        { this.state.route === 'login' 
+            ?<Login />
+            :<div>
+            <Register />
+            <SignOut />
+            </div>
+          
+        }
       </div>
     );
   }

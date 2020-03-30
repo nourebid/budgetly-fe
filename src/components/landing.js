@@ -5,7 +5,7 @@ class Landing extends Component {
     render () {
         return(
             <div>
-                <img alt="logo" src={landingImage} className='shadow-5 br-1 bw1 pointer justify-center mt7 measure flex-auto br3 ba dim'/>
+                <img alt="logo" src={landingImage} className='shadow-5 bw1 pointer justify-center mt7 measure flex-auto br3 ba dim'/>
             </div>
         );
     }
