@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './fonts/Kollektif.ttf'
+import 'tachyons';
 
 ReactDOM.render(
   <React.StrictMode>
