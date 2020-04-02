@@ -11,7 +11,6 @@ class App extends Component {
     super();
     this.state = {
       route: 'welcome',
-      isSignedIn: false
     }
   }
 

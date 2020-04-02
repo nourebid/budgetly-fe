@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Signout from './signOut';
+import BudgetEntry from './Expenses/budgetEntry';
+import ExpensesEntry from './Expenses/expensesEntry';
+import ExpensesDetails from './Expenses/expensesDetails';
 
 class Budget extends Component {
 
@@ -7,8 +10,10 @@ class Budget extends Component {
         const {onSignOut} = this.props 
         return(
             <div>
-                Budget
                 <Signout onSignOut={onSignOut}/>
+                <BudgetEntry />
+                <ExpensesEntry />
+                <ExpensesDetails />
             </div>
         );
     }
