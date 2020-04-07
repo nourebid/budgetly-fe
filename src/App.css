@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.budget{
+  display: grid;
+  grid-auto-rows: auto;
+}

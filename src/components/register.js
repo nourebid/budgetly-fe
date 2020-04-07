@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Register extends Component {
     render () {
-        const {onRegisterSubmit} = this.props;
+        const {onRegisterButtonSubmit} = this.props;
         return(
             <div className="mt6">
                 <article className=" ba bw1 br3 mv4 w-100 w-50-m w-25 mw6 center">
@@ -12,11 +12,11 @@ class Register extends Component {
                             <legend className="f1 fw6 ph0 mh0">Register</legend>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">First Name</label>
-                                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="name"/>
+                                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="firstName"/>
                             </div>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Last Name</label>
-                                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="name"/>
+                                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="SecondName"/>
                             </div>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
@@ -28,7 +28,7 @@ class Register extends Component {
                             </div>
                             </fieldset>
                             <div className="">
-                            <input onClick={onRegisterSubmit} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Register"/>
+                            <input onClick={onRegisterButtonSubmit} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Register"/>
                             </div>
                         </form>
                     </main>
