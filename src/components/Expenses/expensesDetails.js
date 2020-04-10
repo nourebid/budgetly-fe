@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
 class ExpensesDetails extends Component {
-
+    constructor() {
+        super();
+        this.state= {
+            
+        }
+    }
     render () {
-        // const {expenseValue, expenseName} = this.props
+        const {expenseValue, expenseName} = this.props;
         return(
             <div className="bw1 ba br3 mv5 w-25 w-100 w-50-m mw6 shadow-5">
             <article className="">
@@ -15,13 +20,13 @@ class ExpensesDetails extends Component {
                            <ul>
                             Expense Name
                                     <ul>
-                                        
+                                    {expenseName}
                                     </ul>
                            </ul>
                            <ul>
                             Expense Value
                                 <ul>
-                                    
+                                    {expenseValue}
                                 </ul>
                            </ul>
                         </div>

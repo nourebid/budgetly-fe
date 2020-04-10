@@ -10,16 +10,36 @@ class Budget extends Component {
         super();
         this.state = {
             inputValue: '',
-            budgetValue: 0
+            budgetValue: 0,
+            expenseInput: '',
+            expenseValue: '',
+            expenseNameInput: '',
+            expenseName: ''
         }
     }
 
-    onInputChange = (event) => {
+    onBudgetInputChange = (event) => {
         this.setState({inputValue: event.target.value})
     }  
     
-    onButtonSubmit = () => {
+    onBudgetSubmit = () => {
         this.setState({budgetValue: this.state.inputValue})
+    }
+
+    onExpenseChange = (event) => {
+        this.setState({expenseInput: event.target.value})
+    }
+
+    onExpenseNameChange = (event) => {
+        this.setState({expenseNameInput: event.target.value})
+    }
+
+    onExpenseSubmit = () => {
+        this.setState({expenseValue: this.state.expenseInput})
+    }
+
+    onExpenseSubmitName = () => {
+        this.setState({expenseName: this.state.expenseNameInput})
     }
 
     render () {
@@ -28,10 +48,15 @@ class Budget extends Component {
             <div >
                 <Signout onSignOut={onSignOut}/>
                 <div style={{display:'flex', flexWrap:'wrap', justifyContent: 'center'}} className=''>
-                    <BudgetEntry onInputChange={this.onInputChange} onBudgetSubmit={this.onButtonSubmit}/>
-                    <ExpensesEntry />
+                    <BudgetEntry onBudgetInputChange={this.onBudgetInputChange} onBudgetSubmit={this.onBudgetSubmit}/>
+                    <ExpensesEntry 
+                        onExpenseChange={this.onExpenseChange} 
+                        onExpenseSubmit={this.onExpenseSubmit} 
+                        onExpenseNameChange={this.onExpenseNameChange}
+                        onExpenseSubmitName={this.onExpenseSubmitName}
+                    />
                     <Summary budgetValue={this.state.budgetValue}/>
-                    <ExpensesDetails />
+                    <ExpensesDetails expenseValue={this.state.expenseValue} expenseName={this.state.expenseName}/>
                 </div>
                     
             </div>

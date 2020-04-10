@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class BudgetEntry extends Component { 
     render () {
-        const {onInputChange, onBudgetSubmit} = this.props
+        const {onBudgetInputChange, onBudgetSubmit} = this.props
         return(
             <div className="bw1 ba br3 mv5 w-100 w-50-m w-25 mw6 shadow-5 ">
                 <article className="">
@@ -17,7 +17,7 @@ class BudgetEntry extends Component {
                                     type="number" 
                                     name="number"  
                                     id="number" 
-                                    onChange={onInputChange}
+                                    onChange={onBudgetInputChange}
                                 />
                                 <small id="name-desc" 
                                     className="f5 mt2 black-60 db mb2">Please enter your monthly budget and then press Calculate.</small>
