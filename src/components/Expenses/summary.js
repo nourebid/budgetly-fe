@@ -19,11 +19,11 @@ class Summary extends Component {
                         <legend className="f1 fw6 ph0 mh0">Summary</legend>
                         <div>
                             <p className="f4">Budget</p>
-                            <p className="f4">{`${budgetValue}`}</p>
+                            <p className="f4">{`$ ${budgetValue}`}</p>
                             <p className="f4">Total Expenses</p>
-                            <p id='totalEXpenses'>0</p>
+                            <p className="f4">$ 0</p>
                             <p className="f4">Balance</p>
-                            <p id='balance'>0</p>
+                            <p className="f4">$ 0</p>
                         </div>
                         </fieldset>
                     </form>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Signout from './signOut';
 import BudgetEntry from './Expenses/budgetEntry';
 import ExpensesEntry from './Expenses/expensesEntry';
+import ExpensesDetails from './Expenses/expensesDetails';
 import Summary from './Expenses/summary';
 
 class Budget extends Component {
@@ -9,11 +10,11 @@ class Budget extends Component {
         super();
         this.state = {
             inputValue: '',
-            budgetValue: ''
+            budgetValue: 0
         }
     }
 
-    onBudgetInputChange = (event) => {
+    onInputChange = (event) => {
         this.setState({inputValue: event.target.value})
     }  
     
@@ -27,9 +28,10 @@ class Budget extends Component {
             <div >
                 <Signout onSignOut={onSignOut}/>
                 <div style={{display:'flex', flexWrap:'wrap', justifyContent: 'center'}} className=''>
-                    <BudgetEntry onBudgetInputChange={this.onBudgetInputChange} onBudgetSubmit={this.onButtonSubmit}/>
+                    <BudgetEntry onInputChange={this.onInputChange} onBudgetSubmit={this.onButtonSubmit}/>
                     <ExpensesEntry />
                     <Summary budgetValue={this.state.budgetValue}/>
+                    <ExpensesDetails />
                 </div>
                     
             </div>
