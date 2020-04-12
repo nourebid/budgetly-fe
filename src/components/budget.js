@@ -6,8 +6,8 @@ import ExpensesDetails from './Expenses/expensesDetails';
 import Summary from './Expenses/summary';
 
 class Budget extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             inputValue: '',
             budgetValue: 0,

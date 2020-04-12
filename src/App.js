@@ -7,8 +7,8 @@ import Budget from './components/budget';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       route: 'welcome',
     }
