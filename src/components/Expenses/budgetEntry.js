@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 
 class BudgetEntry extends Component { 
+
+    constructor() {
+        super();
+        this.state = {
+            id: 'budgetValue',
+            budgetValue: ''
+        }
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault(e);
+        this.props.addBudget(this.state)
+    }
+
     render () {
-        const {onBudgetInputChange, onBudgetSubmit} = this.props
         return(
             <div className="bw1 ba br3 mv5 w-100 w-50-m w-25 mw6 shadow-5 ">
                 <article className="">
@@ -16,8 +35,8 @@ class BudgetEntry extends Component {
                                 <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                                     type="number" 
                                     name="number"  
-                                    id="number" 
-                                    onChange={onBudgetInputChange}
+                                    id="budgetValue" 
+                                    onChange={this.handleChange}
                                 />
                                 <small id="name-desc" 
                                     className="f5 mt2 black-60 db mb2">Please enter your monthly budget and then press Calculate.</small>
@@ -25,9 +44,9 @@ class BudgetEntry extends Component {
                             </fieldset>
                             <div className="">
                             <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                                type="submit" 
                                 value='Enter'
-                                type="button" 
-                                onClick={onBudgetSubmit}
+                                onClick={this.handleSubmit}
                             />
                             </div>
                         </form>

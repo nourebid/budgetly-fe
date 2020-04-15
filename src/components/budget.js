@@ -9,37 +9,27 @@ class Budget extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inputValue: '',
-            budgetValue: 0,
-            expenseInput: '',
-            expenseValue: '',
-            expenseNameInput: '',
-            expenseName: ''
+            expenseData: [
+                { expenseValue: '', expenseName: ''},
+                { id: 'budgetValue', budgetValue: 0 },
+                { totalExpenses: 0},
+                { balance: 0},
+            ]
         }
     }
 
-    onBudgetInputChange = (event) => {
-        this.setState({inputValue: event.target.value})
-    }  
-    
-    onBudgetSubmit = () => {
-        this.setState({budgetValue: this.state.inputValue})
+    addBudget = (budget) => {
+        let budgets = this.state.expenseData;
+        budgets.push(budget);
+        this.setState({expenseData: budgets});
+        console.log(this.state);
     }
 
-    onExpenseChange = (event) => {
-        this.setState({expenseInput: event.target.value})
-    }
-
-    onExpenseNameChange = (event) => {
-        this.setState({expenseNameInput: event.target.value})
-    }
-
-    onExpenseSubmit = () => {
-        this.setState({expenseValue: this.state.expenseInput})
-    }
-
-    onExpenseSubmitName = () => {
-        this.setState({expenseName: this.state.expenseNameInput})
+    addExpense = (expense) => {
+        let expenses = this.state.expenseData;
+        expenses.push(expense);
+        this.setState({expenseData: expenses});
+        console.log(this.state);
     }
 
     render () {
@@ -48,15 +38,10 @@ class Budget extends Component {
             <div >
                 <Signout onSignOut={onSignOut}/>
                 <div style={{display:'flex', flexWrap:'wrap', justifyContent: 'center'}} className=''>
-                    <BudgetEntry onBudgetInputChange={this.onBudgetInputChange} onBudgetSubmit={this.onBudgetSubmit}/>
-                    <ExpensesEntry 
-                        onExpenseChange={this.onExpenseChange} 
-                        onExpenseSubmit={this.onExpenseSubmit} 
-                        onExpenseNameChange={this.onExpenseNameChange}
-                        onExpenseSubmitName={this.onExpenseSubmitName}
-                    />
-                    <Summary budgetValue={this.state.budgetValue}/>
-                    <ExpensesDetails expenseValue={this.state.expenseValue} expenseName={this.state.expenseName}/>
+                    <BudgetEntry addBudget={this.addBudget}/>
+                    <ExpensesEntry addExpense={this.addExpense}/>
+                    <Summary expenseData={this.state.expenseData}/>
+                    <ExpensesDetails expenseData={this.state.expenseData}/>
                 </div>
                     
             </div>

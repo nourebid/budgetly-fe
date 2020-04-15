@@ -1,15 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Summary extends Component {
-    constructor() {
-        super();
-        this.state = {
-           
-        }
-    }
+const Summary = (props) =>  {
+        const {expenseData} = props;
+        const showBudget = expenseData.map((budgets, index) => {
+            return(
+                <div key={index}>
+                    <p >{budgets.budgetValue}</p>
+                </div>
+                
+            )
+        })
 
-    render () {
-        const {budgetValue} = this.props
+        const showTotalExpenses = expenseData.map((totalExpenses, index) => {
+            return(
+                <div key={index}>
+                    <p >{totalExpenses.totalExpenses}</p>
+                </div>
+                
+            )
+        })
+
+        const showBalance = expenseData.map((balance, index) => {
+            return(
+                <div key={index}>
+                    <p >{balance.balance}</p>
+                </div>
+                
+            )
+        })
+
         return(
             <div className="bw1 ba br3 mv5 w-25 w-100 w-50-m mw6 shadow-5">
             <article className="">
@@ -18,12 +37,13 @@ class Summary extends Component {
                         <fieldset id="budget" className="ba b--transparent ph0 mh0">
                         <legend className="f1 fw6 ph0 mh0">Summary</legend>
                         <div>
-                            <p className="f4">Budget</p>
-                            <p className="f4">{`$ ${budgetValue}`}</p>
-                            <p className="f4">Total Expenses</p>
-                            <p className="f4">$ 0</p>
-                            <p className="f4">Balance</p>
-                            <p className="f4">$ 0</p>
+                            <ul className="f4">Budget</ul>
+                            <ul className="f4">{showBudget}</ul>
+                            <ul className="f4">Total Expenses</ul>
+                            <ul className="f4">{showTotalExpenses}</ul>
+                            <ul className="f4">Balance</ul>
+                            <ul className="f4">{showBalance}</ul>
+                            
                         </div>
                         </fieldset>
                     </form>
@@ -31,7 +51,6 @@ class Summary extends Component {
             </article>
         </div>
         );
-    }
 }
 
 export default Summary;
