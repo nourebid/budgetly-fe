@@ -36,6 +36,7 @@ class Budget extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault(e);
+        e.target.reset();
         this.setState({budgetValue: this.state.budgetInputValue})
         console.log(this.state.budgetValue);
     }

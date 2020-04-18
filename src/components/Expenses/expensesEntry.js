@@ -19,6 +19,7 @@ class ExpensesEntry extends Component {
 
         handleSubmit = (e) => {
             e.preventDefault();
+            e.target.reset();
             this.props.addExpense(this.state)
         }
 
