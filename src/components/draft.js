@@ -46,3 +46,13 @@
 // onExpenseSubmitName = () => {
 // this.setState({expenseName: this.state.expenseNameInput})
 // }
+
+
+// const showBudget = expenseData.map((budgets, index) => {
+//     return(
+//         <div key={index}>
+//             <p >{budgets.budgetValue}</p>
+//         </div>
+        
+//     )
+// })

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 
 class BudgetEntry extends Component { 
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            id: 'budgetValue',
-            budgetValue: ''
+            budgetValue: 0
         }
     }
 
@@ -26,7 +25,7 @@ class BudgetEntry extends Component {
             <div className="bw1 ba br3 mv5 w-100 w-50-m w-25 mw6 shadow-5 ">
                 <article className="">
                     <main className="pa4 black-80 ">
-                        <form className="">
+                        <form onSubmit={this.handleSubmit}>
                             <fieldset id="budget" className="ba b--transparent ph0 mh0">
                             <legend className="f1 fw6 ph0 mh0">Budget</legend>
                             <div className="mt3">
@@ -46,7 +45,6 @@ class BudgetEntry extends Component {
                             <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
                                 type="submit" 
                                 value='Enter'
-                                onClick={this.handleSubmit}
                             />
                             </div>
                         </form>

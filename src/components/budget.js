@@ -10,10 +10,12 @@ class Budget extends Component {
         super(props);
         this.state = {
             expenseData: [
-                { expenseValue: '', expenseName: ''},
-                { id: 'budgetValue', budgetValue: 0 },
-                { totalExpenses: 0},
-                { balance: 0},
+                { expenseValue: '', 
+                    expenseName: '',
+                    budgetValue: '' ,
+                    totalExpenses: '',
+                    balance: ''
+                }
             ]
         }
     }
@@ -22,14 +24,12 @@ class Budget extends Component {
         let budgets = this.state.expenseData;
         budgets.push(budget);
         this.setState({expenseData: budgets});
-        console.log(this.state);
     }
 
     addExpense = (expense) => {
         let expenses = this.state.expenseData;
         expenses.push(expense);
         this.setState({expenseData: expenses});
-        console.log(this.state);
     }
 
     render () {

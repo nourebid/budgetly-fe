@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 class ExpensesEntry extends Component {
-    constructor(){
-        super();
+
+    constructor(props){
+        super(props);
         this.state={
             expenseValue: '',
             expenseName: ''
@@ -20,7 +21,6 @@ class ExpensesEntry extends Component {
             e.preventDefault();
             this.props.addExpense(this.state)
         }
-
 
 
     render () {
@@ -46,7 +46,7 @@ class ExpensesEntry extends Component {
                                     name="name"  
                                     id="expenseName"
                                     onChange={this.handleChange}
-                                    />
+                                />
                                 <small id="name-desc" className="f6 mt2 black-60 db mb2">Please enter your expenses short description.</small>
                             </div>
                             </fieldset>
@@ -54,7 +54,6 @@ class ExpensesEntry extends Component {
                             <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
                                 type="submit" 
                                 value="Add" 
-                                
                             />
                             </div>
                         </form>
