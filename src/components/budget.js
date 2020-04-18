@@ -12,18 +12,13 @@ class Budget extends Component {
             expenseData: [
                 { expenseValue: '', 
                     expenseName: '',
-                    budgetValue: '' ,
-                    totalExpenses: '',
-                    balance: ''
                 }
-            ]
+            ],
+            budgetInputValue: '',
+            budgetValue: 0 ,
+            totalExpenses: 0,
+            balance: 0
         }
-    }
-
-    addBudget = (budget) => {
-        let budgets = this.state.expenseData;
-        budgets.push(budget);
-        this.setState({expenseData: budgets});
     }
 
     addExpense = (expense) => {
@@ -32,16 +27,33 @@ class Budget extends Component {
         this.setState({expenseData: expenses});
     }
 
+    handleChange = (e) => {
+        this.setState({
+            budgetInputValue: e.target.value
+        })
+        console.log(e.target.value);
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault(e);
+        this.setState({budgetValue: this.state.budgetInputValue})
+        console.log(this.state.budgetValue);
+    }
+
     render () {
         const {onSignOut} = this.props 
         return(
             <div >
                 <Signout onSignOut={onSignOut}/>
                 <div style={{display:'flex', flexWrap:'wrap', justifyContent: 'center'}} className=''>
-                    <BudgetEntry addBudget={this.addBudget}/>
+                    <BudgetEntry handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
                     <ExpensesEntry addExpense={this.addExpense}/>
-                    <Summary expenseData={this.state.expenseData}/>
-                    <ExpensesDetails expenseData={this.state.expenseData}/>
+                    <Summary expenseData={this.state.expenseData} 
+                        budgetValue={this.state.budgetValue} 
+                        totalExpenses={this.state.totalExpenses} 
+                        balance={this.state.balance}
+                    />
+                    <ExpensesDetails expenseData={this.state.expenseData} />
                 </div>
                     
             </div>
