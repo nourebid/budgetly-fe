@@ -5,8 +5,7 @@ class ExpensesEntry extends Component {
     constructor(props){
         super(props);
         this.state={
-                expenseValue: '', 
-                expenseName: '',
+                
         }
         }
 

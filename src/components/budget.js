@@ -11,6 +11,7 @@ class Budget extends Component {
         this.state = {
             expenseData: [
                 {   
+                    id: '',
                     expenseValue: '', 
                     expenseName: '',
                 }

@@ -10,7 +10,7 @@ const ExpensesDetails = (props) =>  {
             )
         })
 
-        const showExpenseValue = expenseData.map((expense, index ) => {
+        const showExpenseValue = expenseData.map((expense, index) => {
             return (
                 <div key={index}>
                     <p>{expense.expenseValue}</p>
@@ -18,13 +18,11 @@ const ExpensesDetails = (props) =>  {
             )
         })
 
-        const deleteButton = expenseData.map(( index ) => {
+        const deleteButton = expenseData.map((expense, index) => {
             return (
-                <div key={index}>
-                    <button className='b ph1 pv1 input-reset ba b--black bg-transparent grow pointer f7 dib' 
-                        onClick={deleteExpense}>X</button>
-                </div>
-            )
+            <div key={index}>
+                <button className='b ph1 pv1 input-reset ba b--black bg-transparent grow pointer f7 dib' onClick={deleteExpense}>X</button>
+            </div>);
         })
 
     return(
