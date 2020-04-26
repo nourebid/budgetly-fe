@@ -5,9 +5,9 @@ class ExpensesEntry extends Component {
     constructor(props){
         super(props);
         this.state={
-            expenseValue: '',
-            expenseName: ''
-            }
+                expenseValue: '', 
+                expenseName: '',
+        }
         }
 
         handleChange = (e) => {
@@ -21,6 +21,7 @@ class ExpensesEntry extends Component {
             e.preventDefault();
             e.target.reset();
             this.props.addExpense(this.state)
+            console.log(this.state)
         }
 
 
@@ -39,6 +40,7 @@ class ExpensesEntry extends Component {
                                     name="number"  
                                     id="expenseValue"
                                     onChange={this.handleChange}
+                                    autoComplete='off'
                                 />
                                 <small id="name-desc" className="f6 mt2 black-60 db mb2">Please enter your expenses amount.</small>
                                 <label className="db fw6 lh-copy f6" htmlFor="name"></label>
@@ -47,6 +49,7 @@ class ExpensesEntry extends Component {
                                     name="name"  
                                     id="expenseName"
                                     onChange={this.handleChange}
+                                    autoComplete='off'
                                 />
                                 <small id="name-desc" className="f6 mt2 black-60 db mb2">Please enter your expenses short description.</small>
                             </div>

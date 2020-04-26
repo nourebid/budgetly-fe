@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ExpensesDetails = (props) =>  {
-        const {expenseData} = props;
+        const {expenseData, deleteExpense} = props;
         const showExpenseName = expenseData.map((expense, index) => {
             return (
                 <div key={index}>
@@ -18,6 +18,15 @@ const ExpensesDetails = (props) =>  {
             )
         })
 
+        const deleteButton = expenseData.map(( index ) => {
+            return (
+                <div key={index}>
+                    <button className='b ph1 pv1 input-reset ba b--black bg-transparent grow pointer f7 dib' 
+                        onClick={deleteExpense}>X</button>
+                </div>
+            )
+        })
+
     return(
         <div className="bw1 ba br3 mv5 w-25 w-100 w-50-m mw6 shadow-5">
         <article className="">
@@ -25,7 +34,12 @@ const ExpensesDetails = (props) =>  {
                 <form className="measure">
                     <fieldset id="budget" className="ba b--transparent ph0 mh0">
                     <legend className="f1 fw6 ph0 mh0">Expenses Details</legend>
-                    <div style={{display: 'flex', flexDirection: 'colmun', justifyContent: 'flex-start', flexWrap: 'wrap', columnCount: '2',flexBasis: '50%'}} className='f5'>
+                    <div style={{display: 'flex', 
+                                flexDirection: 'colmun', 
+                                justifyContent: 'flex-start', 
+                                flexWrap: 'wrap', 
+                                columnCount: '3',
+                                flexBasis: '35%'}} className='f5'>
                         <ul>
                         Expense Name
                             <ul>
@@ -36,6 +50,12 @@ const ExpensesDetails = (props) =>  {
                         Expense Value
                             <ul>
                                 {showExpenseValue}
+                            </ul>
+                        </ul>
+                        <ul>
+                        Actions
+                            <ul>
+                                {deleteButton}
                             </ul>
                         </ul>
                     </div>

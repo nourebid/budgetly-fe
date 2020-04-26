@@ -10,7 +10,8 @@ class Budget extends Component {
         super(props);
         this.state = {
             expenseData: [
-                { expenseValue: '', 
+                {   
+                    expenseValue: '', 
                     expenseName: '',
                 }
             ],
@@ -24,6 +25,12 @@ class Budget extends Component {
     addExpense = (expense) => {
         let expenses = this.state.expenseData;
         expenses.push(expense);
+        this.setState({expenseData: expenses});
+    }
+
+    deleteExpense = (expense) => {
+        let expenses = this.state.expenseData;
+        expenses.pop(expense);
         this.setState({expenseData: expenses});
     }
 
@@ -54,7 +61,7 @@ class Budget extends Component {
                         totalExpenses={this.state.totalExpenses} 
                         balance={this.state.balance}
                     />
-                    <ExpensesDetails expenseData={this.state.expenseData} />
+                    <ExpensesDetails expenseData={this.state.expenseData} deleteExpense={this.deleteExpense}/>
                 </div>
                     
             </div>
