@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ExpensesDetails = (props) =>  {
         const {expenseData, deleteExpense} = props;
         const showExpenseName = expenseData.map((expense, index) => {
@@ -21,7 +22,9 @@ const ExpensesDetails = (props) =>  {
         const deleteButton = expenseData.map((expense, index) => {
             return (
             <div key={index}>
-                <button className='b ph1 pv1 input-reset ba b--black bg-transparent grow pointer f7 dib mt2' onClick={deleteExpense}>X</button>
+                <p className='b ph2 p2 input-reset grow pointer f5 mt2' 
+                    onClick={() => deleteExpense(expense.id)}
+                >X</p>
             </div>);
         })
 

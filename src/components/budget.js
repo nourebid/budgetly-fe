@@ -10,6 +10,21 @@ class Budget extends Component {
         super(props);
         this.state = {
             expenseData: [
+                {
+                    id: 1,
+                    expenseValue: 55,
+                    expenseName: 'water'
+                },
+                {
+                    id: 2,
+                    expenseValue: 10,
+                    expenseName: 'akl'
+                },
+                {
+                    id: 3,
+                    expenseValue: 15,
+                    expenseName: 'fool'
+                },
                 
             ],
             budgetInputValue: '',
@@ -25,9 +40,10 @@ class Budget extends Component {
         this.setState({expenseData: expenses});
     }
 
-    deleteExpense = (expense) => {
+    deleteExpense = (id) => {
         let expenses = this.state.expenseData;
-        expenses.pop(expense);
+        let i = expenses.findIndex(expense => expense.id === id)
+        expenses.splice(i, 1);
         this.setState({expenseData: expenses});
     }
 
