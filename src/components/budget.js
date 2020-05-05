@@ -10,21 +10,21 @@ class Budget extends Component {
         super(props);
         this.state = {
             expenseData: [
-                {
-                    id: 1,
-                    expenseValue: 55,
-                    expenseName: 'water'
-                },
-                {
-                    id: 2,
-                    expenseValue: 10,
-                    expenseName: 'akl'
-                },
-                {
-                    id: 3,
-                    expenseValue: 15,
-                    expenseName: 'fool'
-                },
+                // {
+                //     id: 0,
+                //     expenseName: 'gas',
+                //     expenseValue: 10
+                // },
+                // {
+                //     id: 1,
+                //     expenseName: 'water',
+                //     expenseValue: 55
+                // },
+                // {
+                //     id: 2,
+                //     expenseName: 'fool',
+                //     expenseValue: 77
+                // }
                 
             ],
             budgetInputValue: '',
@@ -38,7 +38,17 @@ class Budget extends Component {
         let expenses = this.state.expenseData;
         expenses.push(expense);
         this.setState({expenseData: expenses});
+        let total = 0;
+        if (expenses.length > 0){
+                total = expenses.reduce((acc, curr) => {
+                    acc += curr.expenseValue;
+                    return acc;
+                }, 0)
+            }
+            this.setState({totalExpenses: total});
     }
+
+ 
 
     deleteExpense = (id) => {
         let expenses = this.state.expenseData;
@@ -51,14 +61,14 @@ class Budget extends Component {
         this.setState({
             budgetInputValue: e.target.value
         })
-        console.log(e.target.value);
+        // console.log(e.target.value);
     }
 
     handleSubmit = (e) => {
         e.preventDefault(e);
         e.target.reset();
         this.setState({budgetValue: this.state.budgetInputValue})
-        console.log(this.state.budgetValue);
+        // console.log(this.state.budgetValue);
     }
 
     render () {
@@ -74,7 +84,7 @@ class Budget extends Component {
                         totalExpenses={this.state.totalExpenses} 
                         balance={this.state.balance}
                     />
-                    <ExpensesDetails expenseData={this.state.expenseData} deleteExpense={this.deleteExpense}/>
+                    <ExpensesDetails expenseData={this.state.expenseData} deleteExpense={this.deleteExpense} totalExpenses={this.state.totalExpenses} balance={this.state.balance}/>
                 </div>
                     
             </div>

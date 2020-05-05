@@ -10,7 +10,7 @@ class ExpensesEntry extends Component {
         }
 
         handleChange = (e) => {
-            console.log(e.target.value)
+            // console.log(e.target.value)
             this.setState({
                 [e.target.id]: e.target.value
             })
@@ -20,7 +20,7 @@ class ExpensesEntry extends Component {
             e.preventDefault();
             e.target.reset();
             this.props.addExpense(this.state)
-            console.log(this.state)
+            // console.log(this.state)
         }
 
 

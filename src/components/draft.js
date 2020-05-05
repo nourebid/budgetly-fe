@@ -56,3 +56,32 @@
         
 //     )
 // })
+
+
+   // totalExpense = () => {
+    //     let total = 0;
+    //     if (this.expenseData.length > 0){
+    //         total = this.expenseData.reduce(function(acc, curr) {
+    //             acc += curr.expenseValue;
+    //             return acc;
+    //         }, 0)
+    //     }
+    //     this.setState({totalExpenses: total});
+    //     return total;
+    // }
+
+
+
+//     addExpense = (expense) => {
+//       let expenses = this.state.expenseData;
+//       expenses.push(expense);
+//       this.setState({expenseData: expenses});
+//       let total = 0;
+//       if (expenses.length > 0){
+//               total = expenses.reduce(function(acc, curr) {
+//                   acc += curr.expenseValue;
+//                   return acc;
+//               }, 0)
+//           }
+//           this.setState({totalExpenses: total});
+//   }
