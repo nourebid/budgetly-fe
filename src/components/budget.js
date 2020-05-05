@@ -40,8 +40,9 @@ class Budget extends Component {
         this.setState({expenseData: expenses});
         let total = 0;
         if (expenses.length > 0){
-                total = expenses.reduce((acc, curr) => {
-                    acc += curr.expenseValue;
+            
+                total = expenses.reduce((acc, curr) => {                         
+                    acc += Number(curr.expenseValue);
                     return acc;
                 }, 0)
             }
