@@ -56,6 +56,15 @@ class Budget extends Component {
         let i = expenses.findIndex(expense => expense.id === id)
         expenses.splice(i, 1);
         this.setState({expenseData: expenses});
+        let total = 0;
+        if (expenses.length > 0){
+            
+                total = expenses.reduce((acc, curr) => {                         
+                    acc += Number(curr.expenseValue);
+                    return acc;
+                }, 0)
+            }
+            this.setState({totalExpenses: total});
     }
 
     handleChange = (e) => {
