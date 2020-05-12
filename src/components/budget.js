@@ -47,6 +47,7 @@ class Budget extends Component {
                 }, 0)
             }
             this.setState({totalExpenses: total});
+            
     }
 
  
