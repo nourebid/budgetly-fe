@@ -10,21 +10,6 @@ class Budget extends Component {
         super(props);
         this.state = {
             expenseData: [
-                // {
-                //     id: 0,
-                //     expenseName: 'gas',
-                //     expenseValue: 10
-                // },
-                // {
-                //     id: 1,
-                //     expenseName: 'water',
-                //     expenseValue: 55
-                // },
-                // {
-                //     id: 2,
-                //     expenseName: 'fool',
-                //     expenseValue: 77
-                // }
                 
             ],
             budgetInputValue: '',
