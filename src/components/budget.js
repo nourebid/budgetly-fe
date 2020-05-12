@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Signout from './signOut';
+import Signout from './SignOut';
 import BudgetEntry from './Expenses/budgetEntry';
 import ExpensesEntry from './Expenses/expensesEntry';
 import ExpensesDetails from './Expenses/expensesDetails';
