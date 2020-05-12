@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Login extends Component {
     render () {
-        const {onRegisterClick, onSignIn} = this.props;
+        const {onRegisterWordClick, onSignIn} = this.props;
         return(
             <div className="mt6">
                 <article className="bw1 ba br3 mv4 w-100 w-50-m w-25 mw6 center">
@@ -25,7 +25,7 @@ class Login extends Component {
                             <input onClick={onSignIn} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in"/>
                             </div>
                             <div className="lh-copy mt3">
-                            <a onClick={onRegisterClick} href="#0" className="f6 link dim black db">Register</a>
+                            <a onClick={onRegisterWordClick} href="#0" className="f6 link dim black db">Register</a>
                             <a href="#0" className="f6 link dim black db">Forgot your password?</a>
                             </div>
                         </form>
