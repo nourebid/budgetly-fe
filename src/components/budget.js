@@ -35,7 +35,11 @@ class Budget extends Component {
     }
 
     addExpense = (expense) => {
+        console.log(expense)
         let expenses = this.state.expenseData;
+        expense.id = expenses.length + 1;
+        console.log(expense)
+
         expenses.push(expense);
         this.setState({expenseData: expenses});
         let total = 0;
@@ -53,7 +57,7 @@ class Budget extends Component {
 
     deleteExpense = (id) => {
         let expenses = this.state.expenseData;
-        let i = expenses.findIndex(expense => expense.id !== id)
+        let i = expenses.findIndex(expense => expense.id === id)
         expenses.splice(i, 1);
         this.setState({expenseData: expenses});
         
