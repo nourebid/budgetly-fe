@@ -39,7 +39,6 @@ class Budget extends Component {
             let budget = this.state.budgetValue;
             let balance = budget - total;
             this.setState({balance: balance})
-            console.log(balance)
     }
 
  
@@ -63,21 +62,18 @@ class Budget extends Component {
             let budget = this.state.budgetValue;
             let balance = budget - total;
             this.setState({balance: balance})
-            console.log(balance)
     }
 
     handleChange = (e) => {
         this.setState({
             budgetInputValue: e.target.value
         })
-        // console.log(e.target.value);
     }
 
     handleSubmit = (e) => {
         e.preventDefault(e);
         e.target.reset();
         this.setState({budgetValue: this.state.budgetInputValue})
-        // console.log(this.state.budgetValue);
     }
 
     render () {
