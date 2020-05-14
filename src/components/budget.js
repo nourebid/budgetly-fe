@@ -73,6 +73,7 @@ class Budget extends Component {
         e.preventDefault(e);
         e.target.reset();
         this.setState({budgetValue: this.state.budgetInputValue})
+        this.setState({balance: this.state.budgetInputValue})
     }
 
     render () {
