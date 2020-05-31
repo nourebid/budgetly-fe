@@ -1,8 +1,37 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loginEmail: '',
+            loginPassword: ''
+        }
+    }
+
+    onEmailChange = (e) => {
+        this.setState({loginEmail: e.target.value})
+    }
+
+    onPasswordChange = (e) => {
+        this.setState({loginPassword: e.target.value})
+    }
+
+    onSubmit = () => {
+        fetch('http://localhost:3000/signin', {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: this.state.loginEmail,
+                password: this.state.loginPassword
+            })
+        })
+        // console.log(this.state)
+        this.props.onSignIn();
+    }
+
     render () {
-        const {onRegisterWordClick, onSignIn} = this.props;
+        const {onRegisterWordClick} = this.props;
         return(
             <div className="mt6">
                 <article className="bw1 ba br3 mv4 w-100 w-50-m w-25 mw6 center">
@@ -12,17 +41,36 @@ class Login extends Component {
                             <legend className="f1 fw6 ph0 mh0">Sign In</legend>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address"/>
+                                <input 
+                                    onChange={this.onEmailChange}
+                                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                                    type="email" 
+                                    name="email-address"  
+                                    id="email-address"
+                                    autoComplete="off"
+                                />
                             </div>
                             <div className="mv3">
                                 <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-                                <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password"/>
+                                <input 
+                                    onChange={this.onPasswordChange}
+                                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                                    type="password" 
+                                    name="password"  
+                                    id="password"
+
+                                />
                             </div>
                             <label className="pa0 ma0 lh-copy f6 pointer">
                             <input type="checkbox"/> Remember me</label>
                             </fieldset>
                             <div className="">
-                            <input onClick={onSignIn} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="button" value="Sign in"/>
+                            <input 
+                                onClick={this.onSubmit} 
+                                className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                                type="button" value="Sign in"
+
+                            />
                             </div>
                             <div className="lh-copy mt3">
                             <a onClick={onRegisterWordClick} href="#0" className="f6 link dim black db">Register</a>
