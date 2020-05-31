@@ -26,8 +26,12 @@ class Login extends Component {
                 password: this.state.loginPassword
             })
         })
-        // console.log(this.state)
-        this.props.onSignIn();
+        .then(reponse => reponse.json())
+        .then(data => {
+            if (data === 'Sucess') {
+            this.props.onSignIn();
+            }
+        })
     }
 
     render () {
