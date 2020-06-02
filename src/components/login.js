@@ -29,13 +29,13 @@ class Login extends Component {
         .then(reponse => reponse.json())
         .then(data => {
             if (data === 'Sucess') {
-            this.props.onSignIn();
+            this.props.onRouteChange('budget');
             }
         })
     }
 
     render () {
-        const {onRegisterWordClick} = this.props;
+        const {onRouteChange} = this.props;
         return(
             <div className="mt6">
                 <article className="bw1 ba br3 mv4 w-100 w-50-m w-25 mw6 center">
@@ -77,7 +77,7 @@ class Login extends Component {
                             />
                             </div>
                             <div className="lh-copy mt3">
-                            <a onClick={onRegisterWordClick} href="#0" className="f6 link dim black db">Register</a>
+                            <a onClick={()=> onRouteChange('register')} href="#0" className="f6 link dim black db">Register</a>
                             <a href="#0" className="f6 link dim black db">Forgot your password?</a>
                             </div>
                         </form>

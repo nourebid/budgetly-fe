@@ -78,10 +78,10 @@ class Budget extends Component {
     }
 
     render () {
-        const {onSignOut} = this.props 
+        const {onRouteChange} = this.props 
         return(
             <div >
-                <Signout onSignOut={onSignOut}/>
+                <Signout onRouteChange={()=> onRouteChange('welcome')}/>
                 <div style={{display:'flex', flexWrap:'wrap', justifyContent: 'center'}} className=''>
                     <BudgetEntry handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
                     <ExpensesEntry addExpense={this.addExpense}/>

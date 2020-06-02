@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Register extends Component {
     render () {
-        const {onRegisterButtonSubmit} = this.props;
+        const {onRouteChange} = this.props;
         return(
             <div className="mt6">
                 <article className=" ba bw1 br3 mv4 w-100 w-50-m w-25 mw6 center">
@@ -28,7 +28,7 @@ class Register extends Component {
                             </div>
                             </fieldset>
                             <div className="">
-                            <input onClick={onRegisterButtonSubmit} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="button" value="Register"/>
+                            <input onClick={()=> onRouteChange('budget')} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="button" value="Register"/>
                             </div>
                         </form>
                     </main>

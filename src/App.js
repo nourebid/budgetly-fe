@@ -14,34 +14,18 @@ class App extends Component {
     }
   }
 
-onLogoClick = () => {
-  this.setState({route: 'login'})
+onRouteChange = (route) => {
+  this.setState({route: route})
 }
-
-onRegisterWordClick = () => {
-  this.setState({route: 'register'})
- }
-
- onRegisterButtonSubmit = () => {
-  this.setState({route: 'budget'})
- }
-
- onSignIn = () => {
-   this.setState({route: 'budget'})
- }
-
- onSignOut = () => {
-   this.setState({route: 'welcome'})
- }
 
   render () {
     return (
       <div>
         <div className="App">
-          {this.state.route === 'welcome' ? <Welcome onLogoClick={this.onLogoClick}/>:null}
-          {this.state.route === 'login' ? <Login onRegisterWordClick={this.onRegisterWordClick} onSignIn={this.onSignIn}/>:null}
-          {this.state.route === 'register' ? <Register onRegisterButtonSubmit={this.onRegisterButtonSubmit}/>:null}
-          {this.state.route === 'budget' ? <Budget onSignOut={this.onSignOut}/>:null}
+          {this.state.route === 'welcome' ? <Welcome onRouteChange={this.onRouteChange}/>:null}
+          {this.state.route === 'login' ? <Login onRouteChange={this.onRouteChange}/>:null}
+          {this.state.route === 'register' ? <Register onRouteChange={this.onRouteChange}/>:null}
+          {this.state.route === 'budget' ? <Budget onRouteChange={this.onRouteChange}/>:null}
         </div>
 
       </div>
