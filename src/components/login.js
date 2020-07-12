@@ -66,8 +66,8 @@ class Login extends Component {
 
                                 />
                             </div>
-                            <label className="pa0 ma0 lh-copy f6 pointer">
-                            <input type="checkbox"/> Remember me</label>
+                            {/* <label className="pa0 ma0 lh-copy f6 pointer">
+                            <input type="checkbox"/> Remember me</label> */}
                             </fieldset>
                             <div className="">
                             <input 
@@ -79,7 +79,7 @@ class Login extends Component {
                             </div>
                             <div className="lh-copy mt3">
                             <a onClick={()=> onRouteChange('register')} href="#0" className="f6 link dim black db">Register</a>
-                            <a href="#0" className="f6 link dim black db">Forgot your password?</a>
+                            {/* <a href="#0" className="f6 link dim black db">Forgot your password?</a> */}
                             </div>
                         </form>
                     </main>
