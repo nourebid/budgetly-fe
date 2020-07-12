@@ -11,8 +11,35 @@ class App extends Component {
     super(props);
     this.state = {
       route: 'welcome',
+      user: {
+        id: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        budget: '',
+        expenses: '',
+        balance: '',
+        joined: new Date(),
+        lastAction: ''
+
+      }
     }
   }
+
+loadUser = (data) => {
+  this.setState({user: {
+    id: data.id,
+    firstName: data.firstName,
+    lastName: data.lastName,
+    email: data.email,
+    budget: data.budget,
+    expenses: data.expenses,
+    balance: data.balance,
+    joined: new Date(),
+    lastAction: ''
+    }
+  })
+}
 
 onRouteChange = (route) => {
   this.setState({route: route})
@@ -23,8 +50,8 @@ onRouteChange = (route) => {
       <div>
         <div className="App">
           {this.state.route === 'welcome' ? <Welcome onRouteChange={this.onRouteChange}/>:null}
-          {this.state.route === 'login' ? <Login onRouteChange={this.onRouteChange}/>:null}
-          {this.state.route === 'register' ? <Register onRouteChange={this.onRouteChange}/>:null}
+          {this.state.route === 'login' ? <Login loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>:null}
+          {this.state.route === 'register' ? <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>:null}
           {this.state.route === 'budget' ? <Budget onRouteChange={this.onRouteChange}/>:null}
         </div>
 

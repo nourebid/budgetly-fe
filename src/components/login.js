@@ -27,9 +27,10 @@ class Login extends Component {
             })
         })
         .then(reponse => reponse.json())
-        .then(data => {
-            if (data === 'Sucess') {
-            this.props.onRouteChange('budget');
+        .then(user => {
+            if (user.id) {
+                this.props.loadUser(user);
+                this.props.onRouteChange('budget');
             }
         })
     }
