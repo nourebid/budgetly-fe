@@ -18,7 +18,7 @@ class Login extends Component {
     }
 
     onSubmit = () => {
-        fetch('http://localhost:3000/signin', {
+        fetch('https://budgetly-be-api.herokuapp.com/signin', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
