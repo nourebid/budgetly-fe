@@ -5,25 +5,25 @@ import Register from './components/register';
 import Login from './components/login';
 import Budget from './components/budget';
 
+const initalState = {
+  route: 'welcome',
+  user: {
+    id: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    budget: '',
+    expenses: '',
+    balance: '',
+    joined: '',
+    actionDate: ''
+  }
+}
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      route: 'welcome',
-      user: {
-        id: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        budget: '',
-        expenses: '',
-        balance: '',
-        joined: new Date(),
-        lastAction: ''
-
-      }
-    }
+    this.state = initalState;
   }
 
 loadUser = (data) => {
@@ -35,8 +35,8 @@ loadUser = (data) => {
     budget: data.budget,
     expenses: data.expenses,
     balance: data.balance,
-    joined: new Date(),
-    lastAction: ''
+    joined: data.joined,
+    actionDate: data.actionDate
     }
   })
 }
