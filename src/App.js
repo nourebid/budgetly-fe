@@ -5,6 +5,7 @@ import Register from './components/register';
 import Login from './components/login';
 import Budget from './components/budget';
 
+//Create the initial state to clear users when signout
 const initalState = {
   route: 'welcome',
   user: {
