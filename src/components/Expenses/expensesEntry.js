@@ -24,15 +24,15 @@ class ExpensesEntry extends Component {
 
     render () {
         return(
-            <div className="bw1 ba br3 mv5 w-100 w-50-m w-25 mw6 shadow-5 ">
+            <div className="mr1 mt2 bw1 ba br3 w-25 w-100 w-50-m mw6 shadow-5">
                 <article className="">
                     <main className="pa4 black-80 ">
                         <form onSubmit={this.handleSubmit}>
                             <fieldset id="budget" className="ba b--transparent ph0 mh0">
-                            <legend className="f1 fw6 ph0 mh0">Expenses Entry</legend>
+                            <legend className="f2 fw6 ph0 mh0">Expenses Entry</legend>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="number"></label>
-                                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                                <input className="input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                                     type="number" 
                                     name="number"  
                                     id="expenseValue"
@@ -41,7 +41,7 @@ class ExpensesEntry extends Component {
                                 />
                                 <small id="name-desc" className="f6 mt2 black-60 db mb2">Please enter your expenses amount.</small>
                                 <label className="db fw6 lh-copy f6" htmlFor="name"></label>
-                                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+                                <input className="input-reset ba bg-transparent hover-bg-black hover-white w-100" 
                                     type="text" 
                                     name="name"  
                                     id="expenseName"

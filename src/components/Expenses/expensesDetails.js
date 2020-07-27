@@ -29,12 +29,12 @@ const ExpensesDetails = (props) =>  {
         })
 
     return(
-        <div className="bw1 ba br3 mv5 w-25 w-100 w-50-m mw6 shadow-5">
+        <div className="mr1 mt2 bw1 ba br3 w-25 w-100 w-50-m mw6 shadow-5">
         <article className="">
             <main className="pa4 black-80 ">
                 <form className="measure">
                     <fieldset id="budget" className="ba b--transparent ph0 mh0">
-                    <legend className="f1 fw6 ph0 mh0">Expenses Details</legend>
+                    <legend className="f2 fw6 ph0 mh0">Expenses Details</legend>
                     <div style={{display: 'flex', 
                                 flexDirection: 'colmun', 
                                 justifyContent: 'flex-start', 

@@ -82,7 +82,7 @@ class Budget extends Component {
         return(
             <div >
                 <Signout onRouteChange={()=> onRouteChange('welcome')}/>
-                <div style={{display:'flex', flexWrap:'wrap', justifyContent: 'center'}} className=''>
+                <div style={{display:'flex', flexWrap:'wrap', justifyContent: 'center', padding: '5%'}} className=''>
                     <BudgetEntry handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
                     <ExpensesEntry addExpense={this.addExpense}/>
                     <Summary expenseData={this.state.expenseData} 
