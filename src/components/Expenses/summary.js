@@ -11,7 +11,7 @@ const Summary = (props) =>  {
                     <form className="measure">
                         <fieldset id="budget" className="ba b--transparent ph0 mh0">
                         <legend className="f2 fw6 ph0 mh0">Summary</legend>
-                        <div>
+                        <div className="mr4">
                             <ul className="f4">Budget</ul>
                             <ul className="f4">$ {budgetValue}</ul>
                             <ul className="f4">Total Expenses</ul>
