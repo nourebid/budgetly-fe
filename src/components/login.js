@@ -38,12 +38,12 @@ class Login extends Component {
     render () {
         const {onRouteChange} = this.props;
         return(
-            <div className="mt6">
-                <article className="bw1 ba br3 mv4 w-100 w-50-m w-25 mw6 center">
+            <div className="mv6 w-60 center">
+                <article className="bw1 ba br3 mv4 mw6 center">
                     <main className="pa4 black-80 shadow-5">
                         <form className="measure">
                             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                            <legend className="f1 fw6 ph0 mh0">Sign In</legend>
+                            <legend className="f2 fw6 ph0 mh0">Sign In</legend>
                             <div className="mt3">
                                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                                 <input 

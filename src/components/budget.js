@@ -92,11 +92,9 @@ class Budget extends Component {
                     />
                     <ExpensesDetails expenseData={this.state.expenseData} deleteExpense={this.deleteExpense} totalExpenses={this.state.totalExpenses} balance={this.state.balance}/>
                 </div>
-                    
             </div>
         );
     }
 }
 
 export default Budget
-
