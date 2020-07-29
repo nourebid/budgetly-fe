@@ -22,7 +22,7 @@ const ExpensesDetails = (props) =>  {
         const deleteButton = expenseData.map((expense, index) => {
             return (
             <div key={index}>
-                <p className='b ph2 p2 input-reset grow pointer f5 mt2' 
+                <p className='b ph2 p2 input-reset grow pointer mt2' 
                     onClick={() => deleteExpense(expense.id)}
                 >X</p>
             </div>);
@@ -35,29 +35,24 @@ const ExpensesDetails = (props) =>  {
                 <form className="measure">
                     <fieldset id="budget" className="ba b--transparent ph0 mh0">
                     <legend className="f2 fw6 ph0 mh0">Expenses Details</legend>
-                    <div style={{display: 'flex', 
-                                flexDirection: 'colmun', 
-                                justifyContent: 'flex-start', 
-                                flexWrap: 'wrap', 
-                                columnCount: '3',
-                                flexBasis: '35%'}} className='f5'>
-                        <ul>
+                    <div className="expDetailsNav">
+                        <ul className="lists">
                         Expense Name
-                            <ul>
+                            <li>
                                 {showExpenseName}
-                            </ul>
+                            </li>
                         </ul>
                         <ul>
                         Expense Value
-                            <ul>
+                            <li>
                                 {showExpenseValue}
-                            </ul>
+                            </li>
                         </ul>
                         <ul>
                         Actions
-                            <ul>
+                            <li>
                                 {deleteButton}
-                            </ul>
+                            </li>
                         </ul>
                     </div>
                     </fieldset>
