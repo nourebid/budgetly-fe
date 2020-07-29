@@ -6,3 +6,24 @@
   display: grid;
   grid-auto-rows: auto;
 }
+
+.expDetailsNav{
+  display: flex;
+  margin: 0;
+  font-size: 1em;
+}
+
+li {
+  list-style: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .expDetailsNav{
+    font-size: 0.62em;
+    padding: 0;
+  }
+  .lists {
+    padding-left: 5px;
+    }
+}
